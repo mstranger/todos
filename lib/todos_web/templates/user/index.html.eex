@@ -13,7 +13,7 @@
   <tbody>
     <%= for user <- @users do %>
       <tr>
-        <td class="text-secondary"><%= user.id %></td>
+        <td class="text-muted"><%= user.id %></td>
         <td><%= user.name %></td>
         <td><%= user.login %></td>
         <td><%= user.email %></td>

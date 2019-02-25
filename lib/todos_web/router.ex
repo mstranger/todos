@@ -18,6 +18,8 @@ defmodule TodosWeb.Router do
 
     get "/", PageController, :index
     resources "/users", UserController
+    resources "/sessions", SessionController, only: [:new, :create]
+    delete "/sign_out", SessionController, :delete
   end
 
 end
