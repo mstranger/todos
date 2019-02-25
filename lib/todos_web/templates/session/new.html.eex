@@ -1,5 +1,5 @@
 <div class="row justify-content-md-center">
-  <div class="col col-md-4">
+  <div class="col col-md-5">
     <div class="form-signin">
       <%= form_for @conn, session_path(@conn, :create), [as: :session, class: "form-signin"], fn f -> %>
         <div class="text-center mb-4 mt-4">

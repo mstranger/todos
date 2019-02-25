@@ -20,6 +20,7 @@ defmodule TodosWeb.Router do
     resources "/users", UserController
     resources "/sessions", SessionController, only: [:new, :create]
     delete "/sign_out", SessionController, :delete
+    resources "/registrations", RegistrationController, only: [:new, :create]
   end
 
 end

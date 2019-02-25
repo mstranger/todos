@@ -1,0 +1,37 @@
+<!-- TODO: flex -->
+<div class="row mt-4 justify-content-center">
+  <div class="col col-md-5">
+    <%= form_for @changeset, registration_path(@conn, :create), [as: :registration, class: "form-signin"], fn f -> %>
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+      </div>
+
+      <div class="form-group">
+        <%= text_input f, :name, class: "form-control", placeholder: "Name", required: true %>
+        <%= error_tag f, :name %>
+      </div>
+
+      <div class="form-group">
+        <%= text_input f, :login, class: "form-control", placeholder: "Login", required: true %>
+        <%= error_tag f, :login %>
+      </div>
+
+      <div class="form-group">
+        <%= text_input f, :email, class: "form-control", placeholder: "Email", required: true %>
+        <%= error_tag f, :email %>
+      </div>
+
+      <div class="form-group">
+        <%= password_input f, :password, class: "form-control", placeholder: "Password", required: true %>
+        <%= error_tag f, :password %>
+      </div>
+
+      <div class="form-group">
+        <%= password_input f, :password_confirmation, class: "form-control", placeholder: "Password confirmation", required: true %>
+        <%= error_tag f, :password_confirmation %>
+      </div>
+
+      <%= submit "Sign Up", class: "btn btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>

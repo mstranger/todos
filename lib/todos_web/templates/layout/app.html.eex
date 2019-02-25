@@ -17,13 +17,19 @@
     <!-- cdn end -->
 
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+    <style>
+      /* use google font for brand title */
+      @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+    </style>
   </head>
 
   <body>
     <div class="container">
 
       <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a href="/" class="navbar-brand"><strong>Todos</strong></a>
+        <a class="navbar-brand ml-3" href="/">Todos</a>
+
         <div class="navbar-collapse collapse">
           <ul class="navbar-nav ml-auto">
             <!-- show current user if exist -->
@@ -33,11 +39,16 @@
                 <%= link "Sign out", to: session_path(@conn, :delete),
                   method: :delete, class: "btn btn-outline-primary" %>
               </li>
-            <!-- show Login button esle -->
+            <!-- show Login and Sign up button esle -->
             <% else %>
               <li class="nav-item">
                 <%= link "Log in", to: session_path(@conn, :new),
                   class: "btn btn-outline-primary" %>
+              </li>
+              <li class="nav-item">
+                <%= link "Sign up",
+                  to: registration_path(@conn, :new),
+                  class: "btn btn-outline-primary ml-2" %>
               </li>
             <% end %>
           </ul>

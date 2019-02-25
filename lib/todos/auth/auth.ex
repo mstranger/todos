@@ -1,6 +1,11 @@
 defmodule Todos.Auth do
   alias Todos.{Repo,User}
 
+  def register(params) do
+    User.registration_changeset(%User{}, params)
+    |> Repo.insert()
+  end
+
   def sign_in(login, password) do
     user = Repo.get_by(User, login: login)
     # correct_pass? = user.encrypted_password == password
