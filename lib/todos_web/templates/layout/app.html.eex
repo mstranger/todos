@@ -22,6 +22,10 @@
   <body>
     <div class="container">
 
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="/" class="navbar-brand">Todos</a>
+      </nav>
+
       <!-- flash messages block -->
       <%= unless is_nil(get_flash(@conn, :info)) do %>
         <div class="alert alert-info" role="alert">

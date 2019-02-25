@@ -1,0 +1,8 @@
+<h3 style="margin-top: 15px;"><%= @user.name %></h3>
+<br>
+<div>
+  <p><strong>login:</strong> <%= @user.login %></p>
+  <p><strong>email:</strong> <%= @user.email %></p>
+</div>
+
+<%= link "Return to Users", to: user_path(@conn, :index) %>
