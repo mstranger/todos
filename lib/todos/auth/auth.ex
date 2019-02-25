@@ -3,9 +3,11 @@ defmodule Todos.Auth do
 
   def sign_in(login, password) do
     user = Repo.get_by(User, login: login)
+    # correct_pass? = user.encrypted_password == password
+    correct_pass? = Comeonin.Bcrypt.checkpw(password, user.encrypted_password)
 
     cond do
-      user && user.encrypted_password == password ->
+      user && correct_pass? ->
         {:ok, user}
       true ->
         {:error, :unauthorized}

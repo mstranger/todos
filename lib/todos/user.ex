@@ -16,7 +16,7 @@ defmodule Todos.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:name, :login, :email, :encrypted_password])
-    |> validate_required([:name, :login, :email])
+    |> validate_required([:name, :login, :email, :encrypted_password])
     |> unique_constraint(:login)
     |> unique_constraint(:email)
     |> validate_length(:login, min: 2, max: 20)
