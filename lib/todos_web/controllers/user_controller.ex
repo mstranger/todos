@@ -1,6 +1,8 @@
 defmodule TodosWeb.UserController do
   use TodosWeb, :controller
 
+  plug TodosWeb.Plugs.AuthenticateUser when action not in [:index]
+
   alias Todos.Repo
   alias Todos.User
 

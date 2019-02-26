@@ -33,7 +33,8 @@
         <div class="navbar-collapse collapse">
           <ul class="navbar-nav ml-auto">
             <!-- show current user if exist -->
-            <%= if Todos.Auth.user_signed_in?(@conn) do %>
+            <%#= if Todos.Auth.user_signed_in?(@conn) do %>
+            <%= if @user_signed_in? do %> <!-- using Plug in router.ex -->
               <li class="nav-item">
                 Signed in as: <%= Todos.Auth.current_user(@conn).login %>
                 <%= link "Sign out", to: session_path(@conn, :delete),
